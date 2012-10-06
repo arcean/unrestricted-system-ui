@@ -96,6 +96,11 @@ bool LEDNotificationSink::checkIfAcceptable(const NotificationParameters &parame
         if (allowedNotifications.contains("organiser"))
             return true;
     }
+    // wazapp.message.new event
+    else if (feedbackId.compare("wazapp") == 0) {
+        if (allowedNotifications.contains("wazapp"))
+            return true;
+    }
 
     return false;
 }
